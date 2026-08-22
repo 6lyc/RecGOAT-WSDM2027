@@ -1,0 +1,56 @@
+import argparse
+
+def parse_args():
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('--seed', type=int, default=2025)
+    parser.add_argument('--cuda', type=int, default=1)
+    parser.add_argument('--gpu_id', type=int, default=0)
+    parser.add_argument('--recdim', type=int, default=64)
+    parser.add_argument('--layer', type=int, default=3)
+    parser.add_argument('--lr', type=float, default=0.001)
+    parser.add_argument('--warm_up_steps', type=int, default=500)
+    parser.add_argument('--decay', type=float, default=1e-4)
+    parser.add_argument('--batch_size', type=int, default=2048)
+    parser.add_argument('--bpr_batch', type=int, default=2048)
+    parser.add_argument('--epochs', type=int, default=1000)
+    parser.add_argument('--topks', type=str, default='[10]')
+    parser.add_argument('--test_u_batch_size', type=int, default=1024)
+    parser.add_argument('--multicore', type=int, default=0)
+    parser.add_argument('--tensorboard', type=int, default=0)
+    parser.add_argument('--pretrain', type=bool, default=False)
+    parser.add_argument('--a_split', type=bool, default=False)
+    parser.add_argument('--a_fold', type=int, default=100)
+    parser.add_argument('--dataset', type=str, default='baby')
+    parser.add_argument('--path', type=str, default='./checkpoints')
+    parser.add_argument('--model', type=str, default='lgn', help='lgn | mf | lgn_mm')
+
+    parser.add_argument('--use_multimodal', type=int, default=0)
+    parser.add_argument('--text_feat', type=str, default='')
+    parser.add_argument('--user_text_feat', type=str, default='')
+    parser.add_argument('--image_feat', type=str, default='')
+    parser.add_argument('--audio_feat', type=str, default='')   
+    parser.add_argument('--item_text_graph', type=str, default='')
+    parser.add_argument('--user_text_graph', type=str, default='')
+    parser.add_argument('--item_image_graph', type=str, default='')
+    parser.add_argument('--item_audio_graph', type=str, default='')
+    parser.add_argument('--force_build_item_knn', type=int, default=0)
+    parser.add_argument('--item_knn_k', type=int, default=20)
+    parser.add_argument('--item_branch_layers', type=int, default=2)
+    parser.add_argument('--user_branch_layers', type=int, default=2)
+    parser.add_argument('--fusion', type=str, default='aot', choices=['concat', 'sum', 'oat'])
+    parser.add_argument('--attn_heads', type=int, default=4)
+    parser.add_argument('--attn_dropout', type=float, default=0.1)
+    parser.add_argument('--fuse_drop', type=float, default=0.1)
+    
+    # ot
+    parser.add_argument("--alpha", type=float, default=0.05)
+    parser.add_argument("--beta", type=float, default=0.8)
+    parser.add_argument("--eta", type=float, default=0.2)
+
+    # cl
+    parser.add_argument("--contrastive_weight", type=float, default=0.01)
+    parser.add_argument("--temperature", type=float, default=0.2)
+    parser.add_argument("--modality_consistency_weight", type=float, default=0.5)
+
+    return parser.parse_args()
