@@ -8,7 +8,7 @@ The Official implementation of our paper "The Official implementation of our pap
 
 
 <div align="center">
-<img width="1056" height="521" alt="RecGOAT" src="https://github.com/user-attachments/assets/6330ed46-8620-4273-9b7b-dbe817522d25" />
+<img width="1088" height="666" alt="RecGOAT" src="https://github.com/6lyc/RecGOAT-WSDM2027/blob/main/framework.png" />
 </div>
 
 ## Dependence
