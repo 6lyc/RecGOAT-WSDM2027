@@ -73,5 +73,5 @@ ROOT_PATH = os.path.dirname(os.path.abspath(__file__))
 
 def dataset_path(dataset: str):
     # original repo expects ../data/<dataset>/
-    print(os.path.abspath(os.path.join(ROOT_PATH, '..', 'RecGOAT_SIGIR2026_Submission/data', dataset)))
-    return os.path.abspath(os.path.join(ROOT_PATH, '..', 'RecGOAT_SIGIR2026_Submission/data', dataset))
+    print(os.path.abspath(os.path.join(ROOT_PATH, '..', 'RecGOAT-WSDM2027/data', dataset)))
+    return os.path.abspath(os.path.join(ROOT_PATH, '..', 'RecGOAT-WSDM2027/data', dataset))
