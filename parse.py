@@ -38,7 +38,7 @@ def parse_args():
     parser.add_argument('--item_knn_k', type=int, default=20)
     parser.add_argument('--item_branch_layers', type=int, default=2)
     parser.add_argument('--user_branch_layers', type=int, default=2)
-    parser.add_argument('--fusion', type=str, default='aot', choices=['concat', 'sum', 'oat'])
+    parser.add_argument('--fusion', type=str, default='oat', choices=['concat', 'sum', 'oat'])
     parser.add_argument('--attn_heads', type=int, default=4)
     parser.add_argument('--attn_dropout', type=float, default=0.1)
     parser.add_argument('--fuse_drop', type=float, default=0.1)
